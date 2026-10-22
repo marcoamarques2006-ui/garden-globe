@@ -1,0 +1,14 @@
+rules_version = '2';
+
+// Cole no Console do Firebase → Storage → Regras.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /points/{pointId}/{fileName} {
+      allow read, delete: if request.auth != null;
+      // só fotos e vídeos, até 200 MB por arquivo
+      allow create, update: if request.auth != null
+        && request.resource.size < 200 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*|video/.*');
+    }
+  }
+}
