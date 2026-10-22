@@ -269,3 +269,17 @@ export const SEED_POINTS = [
       description: 'A constelação mais famosa do céu do sul, que está na bandeira do Brasil. Procurem quatro estrelas brilhantes em forma de cruz (e a “Intrometida”, uma quinta estrela menor). Dá para fotografar com o celular no modo noite, apoiado no chão.',
       image: 'cruzeiro', imageCredit: 'https://www.flickr.com/photos/29225114@N08/14016692823', url: 'https://pt.wikipedia.org/wiki/Cruzeiro_do_Sul_(constela%C3%A7%C3%A3o)' }),
 ];
+
+// Carta que aparece em qualquer aparelho enquanto nenhuma outra for salva pelo site.
+export const DEFAULT_LETTER = {
+  from: 'Marco',
+  to: 'Estela',
+  updatedAt: 1792713600000,
+  text: `Primeiramente, meu amor, eu quero te desejar um feliz aniversário. Você não faz ideia de como você é especial pra mim, não sabe 1% do quanto você me ajudou. Eu nunca vou conseguir pôr em atos ou palavras o quanto sou grato, e isso me chateia: você merece saber o quanto é foda.
+
+Não me importa quais são as dificuldades ou quem estará contra, eu sei que posso enfrentar um mundo tendo você ao meu lado. Você é tudo que eu mais preciso e tenho de valioso, e a maior prova disso é isso aqui.
+
+Nada tem sentido sem você. Nenhum desses lugares vale a pena se não estiver com você. Eu quero visitar cada um desses lugares com você, porque só assim as coisas têm sentido.
+
+Eu espero que você curta muito o seu dia, porque é só o começo.`,
+};

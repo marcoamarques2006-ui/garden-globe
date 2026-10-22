@@ -1,6 +1,6 @@
 import { createGlobe } from './globe.js';
 import { createStore, OWNERS } from './store.js';
-import { SEED_POINTS, LEGACY_SEED_IDS, SEED_REV } from './seed.js';
+import { SEED_POINTS, LEGACY_SEED_IDS, SEED_REV, DEFAULT_LETTER } from './seed.js';
 import * as geo from './geo.js';
 
 const OWNER_COLORS = { Marco: '#3d8bff', Estela: '#f2468f' };
@@ -1457,7 +1457,7 @@ async function syncSeeds(seeds) {
   store.subscribePoints((list) => { points = list; refresh(); }, failed);
   store.subscribeProfiles((data) => { profiles = data || {}; repaintAvatars(); }, failed);
   store.subscribeLetter((data) => {
-    letter = data;
+    letter = data?.text ? data : DEFAULT_LETTER;
     renderLetterButton();
     if (letterEl.classList.contains('is-open') && $('#letter-edit').hidden) renderLetter(false);
   }, failed);
